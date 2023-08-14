@@ -58,7 +58,7 @@ def get_fruit_load_list():
         # my_data_row = my_cur.fetchone()
         return my_cur.fetchall()
     
-#streamlit.stop()
+
 
 # add button to load the fruit
 if streamlit.button('Get Fruit Load List'):
@@ -67,7 +67,7 @@ if streamlit.button('Get Fruit Load List'):
 
     streamlit.dataframe(my_data_row)
 
-
+streamlit.stop()
 fruit_choice = streamlit.text_input('What fruit would you like to Add?')
 streamlit.write('Thanks for adding: ', fruit_choice)
 my_cur.execute("insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values ('from streamlit')")
